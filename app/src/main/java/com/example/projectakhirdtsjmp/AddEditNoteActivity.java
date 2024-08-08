@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import java.text.SimpleDateFormat;
@@ -14,6 +15,8 @@ public class AddEditNoteActivity extends AppCompatActivity {
 
     private EditText etTitle, etContent;
     private Button btnSave;
+
+    private TextView tvTitle, tvContent;
     private DatabaseHelperDairy dbHelper;
     private Note note;
     private boolean isEdit = false;
@@ -26,8 +29,13 @@ public class AddEditNoteActivity extends AppCompatActivity {
         etTitle = findViewById(R.id.etTitle);
         etContent = findViewById(R.id.etContent);
         btnSave = findViewById(R.id.btnSave);
+        tvTitle = findViewById(R.id.tvTitle);
+        tvContent = findViewById(R.id.tvContent);
         dbHelper = new DatabaseHelperDairy(this);
         if (getIntent().hasExtra("note_id")) {
+            btnSave.setText("Edit");
+            tvTitle.setText("Edit Title");
+            tvContent.setText("Edit Content");
             int noteId = getIntent().getIntExtra("note_id", -1);
             note = dbHelper.getNote(noteId);
             if (note != null) {

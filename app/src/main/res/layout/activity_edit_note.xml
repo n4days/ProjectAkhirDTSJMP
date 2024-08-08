@@ -5,18 +5,8 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     tools:context=".AddEditNoteActivity">
-
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Masukkan Data Baru"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        />
-
     <EditText
-        android:id="@+id/etTitle"
+        android:id="@+id/etTitleEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:autofillHints="text"
@@ -24,38 +14,25 @@
         android:inputType="text"
         android:padding="16dp"
         android:textSize="18sp"
-        tools:ignore="VisualLintTextFieldSize"
-        android:layout_below="@id/tvTitle"
-        />
-
-    <TextView
-        android:id="@+id/tvContent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Masukkan Data Baru"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:layout_below="@id/etTitle"
-        />
-
+        tools:ignore="VisualLintTextFieldSize" />
     <EditText
-        android:id="@+id/etContent"
+        android:id="@+id/etContentEdit"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:hint="Content"
         android:inputType="textMultiLine"
         android:gravity="top"
         android:padding="16dp"
-        android:layout_below="@id/tvContent"
+        android:layout_below="@id/etTitleEdit"
         android:textSize="18sp"
         tools:ignore="VisualLintTextFieldSize"
         android:autofillHints="" />
     <Button
-        android:id="@+id/btnSave"
+        android:id="@+id/btnSaveEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save"
-        android:layout_below="@id/etContent"
+        android:text="Edit"
+        android:layout_below="@id/etContentEdit"
         android:layout_marginTop="16dp"
         android:padding="16dp"
         android:layout_centerHorizontal="true" />
