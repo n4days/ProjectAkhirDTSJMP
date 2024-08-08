@@ -17,7 +17,7 @@ public class AddEditNoteActivity extends AppCompatActivity {
     private Button btnSave;
 
     private TextView tvTitle, tvContent;
-    private DatabaseHelperDairy dbHelper;
+    private DatabaseHelper dbHelper;
     private Note note;
     private boolean isEdit = false;
 
@@ -31,7 +31,7 @@ public class AddEditNoteActivity extends AppCompatActivity {
         btnSave = findViewById(R.id.btnSave);
         tvTitle = findViewById(R.id.tvTitle);
         tvContent = findViewById(R.id.tvContent);
-        dbHelper = new DatabaseHelperDairy(this);
+        dbHelper = new DatabaseHelper(this);
         if (getIntent().hasExtra("note_id")) {
             btnSave.setText("Edit");
             tvTitle.setText("Edit Title");

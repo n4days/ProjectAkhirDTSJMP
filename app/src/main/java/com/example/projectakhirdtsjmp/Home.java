@@ -24,7 +24,7 @@ public class Home extends AppCompatActivity {
     private TextView tvListView;
     private FloatingActionButton fab;
     private EditText etSearch;
-    private DatabaseHelperDairy dbHelper;
+    private DatabaseHelper dbHelper;
     private List<Note> notesList;
     private ArrayAdapter<String> adapter;
     private List<String> titlesList;
@@ -38,7 +38,7 @@ public class Home extends AppCompatActivity {
         fab = findViewById(R.id.fab);
         etSearch = findViewById(R.id.etSearch);
         tvListView = findViewById(R.id.tvListView);
-        dbHelper = new DatabaseHelperDairy(this);
+        dbHelper = new DatabaseHelper(this);
         notesList = new ArrayList<>();
         titlesList = new ArrayList<>();
         fab.setOnClickListener(new View.OnClickListener() {
