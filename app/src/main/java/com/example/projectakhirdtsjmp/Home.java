@@ -10,6 +10,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
@@ -18,6 +20,8 @@ import java.util.List;
 public class Home extends AppCompatActivity {
 
     private ListView listView;
+
+    private TextView tvListView;
     private FloatingActionButton fab;
     private EditText etSearch;
     private DatabaseHelperDairy dbHelper;
@@ -33,6 +37,7 @@ public class Home extends AppCompatActivity {
         listView = findViewById(R.id.listView);
         fab = findViewById(R.id.fab);
         etSearch = findViewById(R.id.etSearch);
+        tvListView = findViewById(R.id.tvListView);
         dbHelper = new DatabaseHelperDairy(this);
         notesList = new ArrayList<>();
         titlesList = new ArrayList<>();
@@ -92,6 +97,11 @@ public class Home extends AppCompatActivity {
         adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, titlesList);
         listView.setAdapter(adapter);
+        if (adapter.getCount() > 0) {
+            tvListView.setText("Data Diary Activity");
+        } else {
+            tvListView.setText("No Diary Entries");
+        }
     }
     private void searchNotes(String keyword) {
         notesList = dbHelper.searchNotes(keyword);

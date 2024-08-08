@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
     <EditText
         android:id="@+id/etSearch"
         android:layout_width="match_parent"
@@ -14,16 +15,28 @@
         tools:ignore="VisualLintTextFieldSize"
         android:inputType="text"
         android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/tvListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_below="@id/etSearch"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        />
+
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/etSearch"
+        android:layout_below="@id/tvListView"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:padding="16dp" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
@@ -33,4 +46,5 @@
         android:layout_margin="16dp"
         android:src="@drawable/baseline_add_circle_24"
         android:contentDescription="TODO" />
+
 </RelativeLayout>
